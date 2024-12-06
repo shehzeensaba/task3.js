@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme Switcher</title>
+  <link rel="icon" type="image/icon" href="\favicon-32x32.png">
+  <style id="theme-style">
+    body {
+      font-family: Arial, sans-serif;
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+    .light-theme {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .dark-theme {
+        background-image: url("https://img.freepik.com/free-photo/cup-near-cloth-twig_23-2147811262.jpg?ga=GA1.1.1639133888.1710839055&semt=ais_tags_boosted");
+        background-size: cover;
+      background-color: #333;
+      color: #f4f4f4;
+    }
+
+    .theme-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .theme-btn {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .theme-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body class="light-theme">
+
+  <div class="theme-container">
+    <button class="theme-btn" id="theme-toggle-btn">Switch to Dark Theme</button>
+  </div>
+
+  <script>
+    document.getElementById('theme-toggle-btn').addEventListener('click', function() {
+      document.body.classList.toggle('dark-theme');
+      document.body.classList.toggle('light-theme');
+      this.textContent = document.body.classList.contains('dark-theme') ? 'Switch to Light Theme' : 'Switch to Dark Theme';
+    });
+  </script>
+  
+</body>
+</html> 
